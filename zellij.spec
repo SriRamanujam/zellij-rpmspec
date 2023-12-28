@@ -4,7 +4,7 @@
 
 Name:       zellij
 Version:    0.39.2
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    A terminal workspace with batteries included.
 
 License:    MIT
@@ -18,6 +18,7 @@ BuildRequires: rust >= 1.39
 %endif
 BuildRequires: gcc
 BuildRequires: python3-devel
+BuildRequires perl
 
 %description
 Zellij is a workspace aimed at developers, ops-oriented people and anyone who loves the terminal. At its core, it is a terminal multiplexer (similar to tmux and screen), but this is merely its infrastructure layer. Zellij includes a layout system, and a plugin system allowing one to create plugins in any language that compiles to WebAssembly.
@@ -47,3 +48,17 @@ strip --strip-all %{buildroot}%{_bindir}/*
 %license LICENSE.md
 %doc README.md
 %{_bindir}/zellij
+
+%changelog
+
+* Wed Dec 27 2023 Sri Ramanujam <sri@ramanujam.io> - 0.39.2-2
+
+- Updated requires to include openssl-devel and perl
+
+* Sat Dec 09 2023 Sri Ramanujam <sri@ramanujam.io> - 0.39.2-1
+
+- Bump to 0.39.2
+
+* Fri Sep 22 2023 Sri Ramanujam <sri@ramanujam.io> - 0.38.2-1
+
+- Bump to 0.38.2
